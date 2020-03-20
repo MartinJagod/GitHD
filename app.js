@@ -2,7 +2,7 @@
 //Suma, Resta, Multiplicación, División.
 //Tomar los operadores desde los argumentos de la terminal.
 // tomar la operacion.
-const [,,operador,...operandos] = process.argv;
+const [,,operador,factorial,...operandos] = process.argv;
 const calculadora = require ('./calculadora');
 
 //guardar un string que va a representar la operación que se hizo
@@ -48,6 +48,11 @@ switch(operador){
             return red + "/" + elem;
         })+ "=" + resultado);
         
+    }break;
+    case "factorial":{
+        let resultado = calculadora.factorial(factorial);
+        console.log(resultado);
+        logs.push("factorial de " + factorial + "= " + resultado);
     }break;
     case "historial":{
         logs.forEach((elem, i) => {
